@@ -5,15 +5,14 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var backgroundImg;
+var hour;
 
-var bg ;
+var bg = "sunrise1.png";
 
 function preload() {
     // create getBackgroundImg( ) here
-    getBackgroundImg()
+    getBackgroundImg();
 }
-
-
 
 function setup(){
     var canvas = createCanvas(1200,700);
@@ -23,8 +22,7 @@ function setup(){
 }
 
 function draw(){
-
-    // add condition to check if any background image is there to add
+     // add condition to check if any background image is there to add
     if(backgroundImg)
     background(backgroundImg);
 
@@ -43,11 +41,9 @@ function draw(){
 
 }
 
-
 async function getBackgroundImg(){
 
     // write code to fetch time from API
-
     var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
 
     //change the data in JSON format
